@@ -43,7 +43,7 @@ public interface EmployeeMapper {
      * 根据主键动态修改属性
      * @param employee
      */
-    @AutoFill(value = OperationType.UPDATE)
+    @AutoFill(value = OperationType.UPDATE )
     void update(Employee employee);
 
 
