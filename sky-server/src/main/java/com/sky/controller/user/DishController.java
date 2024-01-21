@@ -48,14 +48,13 @@ public class DishController {
         }
 
 
-
         Dish dish = new Dish();
         dish.setCategoryId(categoryId);
         dish.setStatus(StatusConstant.ENABLE);//查询起售中的菜品
 
         //如果不存在，查询数据库，将查询到的数据放入redis中
         list = dishService.listWithFlavor(dish);
-        redisTemplate.opsForValue().set(key,list);
+        redisTemplate.opsForValue().set(key, list);
 
         return Result.success(list);
     }
